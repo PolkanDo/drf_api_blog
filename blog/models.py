@@ -6,6 +6,10 @@ from django.utils import timezone
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.name
 
@@ -34,6 +38,8 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-published',)
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
 
     def __str__(self):
         return self.title
